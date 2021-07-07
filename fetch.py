@@ -1,5 +1,3 @@
-def lon_lat_to_coords(lat, lon):
-    return (int((lat+90.0)/.5), int((lon+180)/.625))
 import os
 import pandas as pd
 import netCDF4 as nc4
@@ -55,11 +53,11 @@ fields = {
     'V2M': 'northward wind 2m above surface',
 }
 for city in cities.keys():
-    files = [f for f in os.listdir(f"C:/Users/Yash Agarwal/Desktop/Data/"+city)]
+    files = [f for f in os.listdir(f"C:/Users/Yash Agarwal/Desktop/Data/"+city)] #change directory path accordingly
     print(files)
     df_main=[]
     for f in files:
-        nc = nc4.Dataset("C:/Users/Yash Agarwal/Desktop/Data/"+city+'/'+f)
+        nc = nc4.Dataset("C:/Users/Yash Agarwal/Desktop/Data/"+city+'/'+f) #change directory path accordingly
         time_var = nc.variables['time']
         data={}
         dtime = nc4.num2date(time_var[:], time_var.units)
@@ -77,6 +75,6 @@ for city in cities.keys():
         df=pd.DataFrame(df)
         df_main.append(df)
     result=pd.concat(df_main)
-    result.to_csv("C:/Users/Yash Agarwal/Desktop/Data/"+city+'/'+f+'_final.csv')
+    result.to_csv("C:/Users/Yash Agarwal/Desktop/Data/"+city+'/'+f+'_final.csv') #change directory path accordingly
 
 
