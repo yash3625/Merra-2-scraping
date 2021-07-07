@@ -112,9 +112,9 @@ if __name__ ==  '__main__':
             print(url)
 
             # extract the filename from the url to be used when saving the file
-            filename = 'C:/Users/Yash Agarwal/Desktop/Data/'+key+'/'+key+'_MERRA2_400.inst1_2d_asm_Nx.' + YYYY + MM + DD + '.nc4.nc'
-            if not os.path.exists('C:/Users/Yash Agarwal/Desktop/Data/'+key):
-                os.mkdir('C:/Users/Yash Agarwal/Desktop/Data/'+key)
+            filename = 'C:/Users/Yash Agarwal/Desktop/Data/'+key+'/'+key+'_MERRA2_400.inst1_2d_asm_Nx.' + YYYY + MM + DD + '.nc4.nc' #change directory path accordingly
+            if not os.path.exists('C:/Users/Yash Agarwal/Desktop/Data/'+key): #change directory path accordingly
+                os.mkdir('C:/Users/Yash Agarwal/Desktop/Data/'+key) #change directory path accordingly
             print(filename)
 
             try:
